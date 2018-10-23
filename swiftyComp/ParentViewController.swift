@@ -25,9 +25,6 @@ class ParentViewController: UIViewController, UITableViewDataSource, UITableView
         //print our skills label
         skillsLabel.text = "\((User.first_name).capitalized)'s Skills"
         projectLabel.text = "\((User.first_name).capitalized)'s Projects"
-        
-        print("\(String(format: "%i",(User.projects_users.first?.final_mark)!))")
-        print(User.projects_users.first?.project.slug! as Any)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,21 +68,11 @@ class ParentViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "UserInfoChild")
         {
-            if let nextViewController = segue.destination as? TopProfileViewController{ print("gets in child")
+            if let nextViewController = segue.destination as? TopProfileViewController{
                 nextViewController.User = self.User
             }
         }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TopProfileViewController: UIViewController {
+class TopProfileViewController: UIViewController{
     
     var User : Users!
-    
-    
+    let alert = ViewController()
+
     @IBOutlet weak var levelBar: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var correctionLabel: UILabel!
@@ -66,21 +66,10 @@ class TopProfileViewController: UIViewController {
                     })
                 }
             } else {
-                print("error")
+                self.alert.creatAlert(title: "Download Error", message: "Could not download image")
             }
         })
         task.resume()
     }
-  
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

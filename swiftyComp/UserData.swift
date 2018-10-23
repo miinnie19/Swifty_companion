@@ -19,22 +19,7 @@ struct Users: Decodable {
     let wallet:Int
     let cursus_users : [Cursus_users]
     let projects_users: [Project_users]
-    //let skills: [Skills]
-
-
-
-//    enum CodingKeys: String, CodingKey {
-//
-//        case first_name         = "first_name"
-//        case last_name          = "last_name"
-//        case login              = "login"
-//        case email              = "email"
-//        case image_url          = "image_url"
-//        case correction_point   = "correction_point"
-//        case wallet             = "wallet"
-//        case cursus_users       = "cursus_users"
-//        case skills             = "skills"
-//    }
+ 
 }
 struct Cursus_users: Decodable {
     let level : Double

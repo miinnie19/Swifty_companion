@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intra_back2" translatesAutoresizingMaskIntoConstraints="NO" id="u8V-oV-OLP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intra_back" translatesAutoresizingMaskIntoConstraints="NO" id="u8V-oV-OLP">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Wo-hR-zYa">
@@ -77,7 +77,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEQ-eI-8uD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="980"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4w-Uu-TV9">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="197"/>
@@ -227,9 +227,10 @@
                                             <constraint firstItem="D4w-Uu-TV9" firstAttribute="leading" secondItem="xEQ-eI-8uD" secondAttribute="leading" id="MWk-Sc-Wyw"/>
                                             <constraint firstItem="Vd3-fw-3BA" firstAttribute="leading" secondItem="xEQ-eI-8uD" secondAttribute="leading" id="Nf3-lv-7nr"/>
                                             <constraint firstAttribute="trailing" secondItem="Vd3-fw-3BA" secondAttribute="trailing" id="Xz5-Oz-aUB"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="980" id="afo-jR-0m8"/>
                                             <constraint firstItem="Cy1-vd-tY2" firstAttribute="top" secondItem="Vd3-fw-3BA" secondAttribute="bottom" constant="40" id="bRB-Lh-cDc"/>
                                             <constraint firstItem="D4w-Uu-TV9" firstAttribute="top" secondItem="xEQ-eI-8uD" secondAttribute="top" id="oZ7-nZ-Wvz"/>
-                                            <constraint firstAttribute="height" constant="1000" id="pm4-ha-SxR"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="980" id="sZ2-fK-fT1"/>
                                             <constraint firstAttribute="trailing" secondItem="Cy1-vd-tY2" secondAttribute="trailing" id="x3Y-aI-8wk"/>
                                         </constraints>
                                     </view>
@@ -416,6 +417,5 @@
     <resources>
         <image name="default" width="350" height="350"/>
         <image name="intra_back" width="2000" height="1300"/>
-        <image name="intra_back2" width="2000" height="1300"/>
     </resources>
 </document>

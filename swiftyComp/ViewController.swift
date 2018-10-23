@@ -8,27 +8,22 @@
 
 import UIKit
 import Foundation
-import SwiftyJSON
-
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var usernameText: UITextField!
     @IBAction func searchUsername(_ sender: UIButton) {
 
-        if (usernameText.text == "" && usernameText.text == nil)
+        if (usernameText.text == "" || usernameText.text == nil)
         {
-            self.creatAlert(title: "Error", message: "no text")
+            self.creatAlert(title: "Error", message: "Please enter a valid username")
         }
         else
         {
             APIController().getUser(username: usernameText.text!, with: { data in
                 
-//                if let dic: NSDictionary = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
-//                    print(dic)
-//
                     guard let userData = try? JSONDecoder().decode(Users.self, from: data) else {
-                        print("Error: Couldn't decode data into Blog")
+                        self.creatAlert(title: "Decode Error", message: "Could not decode data from Users")
                         return
                     }
                     print("first_name: \(userData.first_name)")
@@ -55,16 +50,13 @@ class ViewController: UIViewController {
             print("start")
         APIController().request(req: APIController().getCodeRequest(), with: {data in
             print("Ok")
-
         }, with: {error in print("Err")})
             print("end")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare")
         if(segue.identifier == "profilePage")
         {
-            print("prepare2")
             if let nextViewController = segue.destination as? ParentViewController{
                  nextViewController.User = APIController.USER
             }

@@ -57,8 +57,6 @@ public class APIController: UIViewController{
             }
             else if let d = data{
                 DispatchQueue.main.async {
-                    //                     print("Response: ", response ?? "no-response")
-                    //                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     
                     do {
                         if let resp: NSDictionary = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
@@ -75,8 +73,8 @@ public class APIController: UIViewController{
                     successCallBack(d)
                 }
             }else{
-                print("KK")
-            }
+                print("Error with request")
+                }
         }
         
         // UIApplication.shared.isNetworkActivityIndicatorVisible = true
