@@ -37,8 +37,7 @@ class TopProfileViewController: UIViewController{
         self.walletLabel.text = "Wallet: \(self.User.wallet)"
         self.firstNameLabel.text = "First Name: \(self.User.first_name)".capitalized
         self.lastNameLabel.text = "Last Name: \(self.User.last_name)".capitalized
-        self.levelBar.text = "Level: \(String(format: "%.2f", self.User.cursus_users[0].level))"
-        
+        self.levelBar.text = "Level: \(String(format: "%.2f", self.User.cursus_users[0].level))%"
         
         let cut = self.User.image_url.split(separator: "/")[3]
         downloadImage(url: "https://cdn.intra.42.fr/users/medium_\(cut)")
@@ -49,6 +48,7 @@ class TopProfileViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    //Downloading image
     func downloadImage(url: String)
     {
         let url:URL = URL(string: url)!

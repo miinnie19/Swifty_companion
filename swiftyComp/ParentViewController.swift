@@ -16,13 +16,17 @@ class ParentViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var projectLabel: UILabel!
       var User: Users!
     
+    let green = UIColor(red: 0.3569, green: 0.7294, blue: 0.4471, alpha: 1.0)
+    let red = UIColor(red: 216/255, green: 99/255, blue: 111/255, alpha: 1.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         skillTbale.delegate = self
         skillTbale.dataSource = self
         
-        //print our skills label
+        self.title = "\((User.first_name).capitalized)'s Profile"
+        //print out skills label
         skillsLabel.text = "\((User.first_name).capitalized)'s Skills"
         projectLabel.text = "\((User.first_name).capitalized)'s Projects"
     }
@@ -54,6 +58,21 @@ class ParentViewController: UIViewController, UITableViewDataSource, UITableView
             let cell : ProjectsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "projects", for: indexPath) as! ProjectsTableViewCell
             cell.projectLevel.text = "\(self.User.projects_users[indexPath.row].final_mark ?? 0)%"
             cell.projectName.text = User.projects_users[indexPath.row].project.slug
+            if (self.User.projects_users[indexPath.row].validated == true)
+            {
+                cell.projectName.textColor = green
+                cell.projectLevel.textColor = green
+            }
+            else if (self.User.projects_users[indexPath.row].validated == false)
+            {
+                cell.projectName.textColor = red
+                cell.projectLevel.textColor = red
+
+            }
+            else {
+                cell.projectName.textColor = UIColor.darkGray
+                cell.projectLevel.textColor = UIColor.darkGray
+            }
             return cell
         }
     }

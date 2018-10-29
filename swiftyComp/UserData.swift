@@ -19,8 +19,8 @@ struct Users: Decodable {
     let wallet:Int
     let cursus_users : [Cursus_users]
     let projects_users: [Project_users]
- 
 }
+
 struct Cursus_users: Decodable {
     let level : Double
     let skills: [Skills]
@@ -34,6 +34,13 @@ struct Skills: Decodable{
 struct Project_users: Decodable {
     let final_mark: Int?
     let project: Project
+    let validated :Bool?
+    
+    enum CodingKeys : String, CodingKey{
+        case final_mark
+        case project
+        case validated = "validated?"
+    }
  
 }
 struct Project: Decodable {

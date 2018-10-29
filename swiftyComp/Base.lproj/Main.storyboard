@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swiftyComp" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intra_back" translatesAutoresizingMaskIntoConstraints="NO" id="u8V-oV-OLP">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Wo-hR-zYa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4Wo-hR-zYa">
                                 <rect key="frame" x="102" y="353" width="210" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -32,18 +32,27 @@
                                 <rect key="frame" x="123" y="391" width="169" height="30"/>
                                 <color key="backgroundColor" red="0.072703764830000003" green="0.64330770449999997" blue="0.71736199239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Search Username">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="searchUsername:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rCk-Qc-YC1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="42_logo" translatesAutoresizingMaskIntoConstraints="NO" id="kZE-B5-MGs">
+                                <rect key="frame" x="115.66666666666669" y="243" width="183" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="183" id="90n-9w-LeL"/>
+                                    <constraint firstAttribute="height" constant="90" id="Vh1-9f-u0Q"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4Wo-hR-zYa" firstAttribute="top" secondItem="kZE-B5-MGs" secondAttribute="bottom" constant="20" id="6Sj-CY-NVj"/>
                             <constraint firstItem="u8V-oV-OLP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="71M-MJ-kTg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Wo-hR-zYa" secondAttribute="trailing" constant="102" id="IlA-by-0fO"/>
                             <constraint firstItem="u8V-oV-OLP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Khd-oC-lDn"/>
+                            <constraint firstItem="kZE-B5-MGs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NtC-ht-d3Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TNC-4d-etU" secondAttribute="trailing" constant="122" id="WYp-4V-YmB"/>
                             <constraint firstItem="u8V-oV-OLP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cL4-iJ-f7E"/>
                             <constraint firstItem="TNC-4d-etU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="doB-L5-CVi"/>
@@ -55,15 +64,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="7DM-5i-gKw"/>
+                    <navigationItem key="navigationItem" title="Search" id="7DM-5i-gKw"/>
                     <connections>
+                        <outlet property="search" destination="TNC-4d-etU" id="Mto-SL-Xuk"/>
                         <outlet property="usernameText" destination="4Wo-hR-zYa" id="zKO-ES-vnf"/>
                         <segue destination="eic-m2-Cis" kind="show" identifier="profilePage" id="3uA-DS-IyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="-580.65967016491754"/>
+            <point key="canvasLocation" x="866.66666666666674" y="-581.25"/>
         </scene>
         <!--Parent View Controller-->
         <scene sceneID="SQX-l0-ByO">
@@ -99,7 +109,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8j-Dj-Kap">
-                                                            <rect key="frame" x="8" y="5" width="398" height="21"/>
+                                                            <rect key="frame" x="8" y="5" width="720" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -164,7 +174,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vw-Ft-QGF">
-                                                            <rect key="frame" x="8" y="5" width="398" height="21"/>
+                                                            <rect key="frame" x="8" y="5" width="720" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -415,6 +425,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="42_logo" width="573" height="402"/>
         <image name="default" width="350" height="350"/>
         <image name="intra_back" width="2000" height="1300"/>
     </resources>
